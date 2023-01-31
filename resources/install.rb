@@ -66,7 +66,7 @@ action :create do
         distribution node['lsb']['codename']
         components ['stable']
         arch telegraf_arch
-        key "#{node['telegraf']['package_url']}/influxdb.key"
+        key "#{node['telegraf']['package_url']}/influxdata-archive_compat.key"
         only_if { new_resource.include_repository }
       end
     elsif platform_family? 'windows'
