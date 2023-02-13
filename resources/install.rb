@@ -39,7 +39,7 @@ action :create do
         else
           baseurl  "#{node['telegraf']['package_url']}/centos/\$releasever/\$basearch/stable"
         end
-        gpgkey  "#{node['telegraf']['package_url']}/influxdb.key"
+        gpgkey  "#{node['telegraf']['package_url']}/influxdata-archive_compat.key"
         only_if { new_resource.include_repository }
       end
     elsif platform_family? 'debian'
