@@ -176,12 +176,6 @@ action :create do
   else
     raise "#{new_resource.install_type} is not a valid install type."
   end
-
-  service "telegraf_#{new_resource.name}" do
-    service_name 'telegraf'
-    action :enable
-    delayed_action :start
-  end
 end
 
 action :delete do
